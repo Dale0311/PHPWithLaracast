@@ -1,2 +1,4 @@
 <?php 
-require_once "index.view.php";
+$heading = "Dashboard";
+require_once "functions.php";
+require_once "view/index.view.php";
