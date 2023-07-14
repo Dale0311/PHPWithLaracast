@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$heading = "Note";
+$heading = "Note:";
 $config = require "config.php";
 $id = $_GET['id'];
 $pdo = new Database($config['database']);
@@ -10,10 +10,10 @@ $arrRow = fetchRow($posts);
 
 // authorization
 if(!$arrRow){
-    abort(404);
+    abort(Response::$NOTFOUND);
 }
 if($arrRow['user_id'] !== $_SESSION['curr_user_id']){
-    abort(403);
+    abort(Response::$FORBIDDEN);
 }
 
 
