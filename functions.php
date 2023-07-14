@@ -10,4 +10,22 @@
         die();
     }
 
+    function fetchRows($obj){
+        $arrPost=[];
+        
+        if($obj->rowCount() > 1){
+            foreach ($obj->fetchAll() as $key => $row) {
+                $arrPost[]=$row;
+            }
+        }
+        else{
+            $arrPost['message'] = "No record Found";
+        }
+        return $arrPost;
+    }
+
+    function fetchRow($obj){
+        return $obj->fetch();
+    }
+
     

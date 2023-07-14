@@ -5,6 +5,7 @@ $routes = [
     "/"=> "controllers/index.php",
     "/about"=> "controllers/about.php",
     "/notes"=> "controllers/notes.php",
+    "/note"=> "controllers/note.php",
     "/projects"=> "controllers/projects.php",
 ];
 function abort($code = 404){
