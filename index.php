@@ -1,4 +1,6 @@
 <?php 
-$heading = "Dashboard";
-require_once "functions.php";
-require_once "view/index.view.php";
+require "functions.php";
+require "Database.php";
+require "Blog.php";
+require "router.php";
+ 
