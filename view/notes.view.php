@@ -13,6 +13,10 @@
                     <br>
                 <?php endforeach; ?>
             </ul>
+
+            <p>
+                <a href="note-create" class="py-2 px-4 bg-blue-500 text-white hover:bg-blue-600 rounded">Create a note</a>
+            </p>
         </div>
     </main>
 <?php require "partials/footer.php" ?>
