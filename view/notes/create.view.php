@@ -1,6 +1,6 @@
-<?php require "partials/header.php" ?>
-<?php require "partials/nav.php" ?>
-<?php require "partials/generic.php" ?>
+<?php require basePath("view/partials/header.php") ?>
+<?php require basePath("view/partials/nav.php") ?>
+<?php require basePath("view/partials/generic.php") ?>
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 mt-6 bg-white rounded">
         <div class="w-1/2 mx-auto">
@@ -26,7 +26,7 @@
                     <?php endif ?>
                 </div>
                 <div class="self-end">
-                    <button type="submit" name="submitForm" class="inline-flex items-center gap-2 rounded border border-indigo-600 bg-indigo-600 px-8 py-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" href="">
+                    <button type="submit" name="submitForm" class="inline-flex items-center gap-2 rounded border border-indigo-600 bg-indigo-600 px-8 py-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500">
                         <span class="text-sm font-medium"> Create </span>
 
                         <svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,6 +38,6 @@
         </div>
     </div>
 </main>
-<?php require "partials/footer.php" ?>
+<?php require basePath("view/partials/footer.php") ?>
 
 

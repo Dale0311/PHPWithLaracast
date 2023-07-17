@@ -1,7 +1,6 @@
 <?php 
 session_start();
-$heading = "Note:";
-$config = require "config.php";
+$config = require basePath("config.php"); 
 
 // if $_GET['id'] is set then gonna create variable of Id, if not dont create.
 if(isset($_GET['id'])){
@@ -14,10 +13,14 @@ if(isset($_GET['id'])){
     // is there a record? 
     hasRecord($arrRow);
     
-    // if user_id != to curr_user_id
+    // if condition not true
     authorize($arrRow['user_id'] === $_SESSION['curr_user_id']);
     
-    require_once "view/note.view.php";
+    $properties = [
+        "Heading" => "My note:",
+        "arrRow" => $arrRow
+    ];
+    view("/notes/show.view.php", $properties);
 }else{
     header("location: notes");
 }

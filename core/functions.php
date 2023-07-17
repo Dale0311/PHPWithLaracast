@@ -22,4 +22,14 @@
         }
     }
 
+    function basePath($path){
+        return BASE_PATH . $path;
+    }
+
+    function view($path, $properties=[]){
+        extract($properties);
+        require basePath("view/".$path);
+    }
+
+
     

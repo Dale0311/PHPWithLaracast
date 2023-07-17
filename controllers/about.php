@@ -1,3 +1,5 @@
 <?php 
-$heading = "About Section";
-require_once "view/about.view.php";
+$properties = [
+    "Heading" => "About Section",
+];
+view("about.view.php", $properties);

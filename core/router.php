@@ -1,7 +1,6 @@
 <?php
-$routes = require "routes.php";
+$routes = require basePath("routes.php") ;
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
 
 function abort($code = 404){
     http_response_code($code);

@@ -1,3 +1,5 @@
-<?php 
-$heading = "Project Section";
-require_once "view/projects.view.php";
+<?php
+$properties = [
+    "Heading" => "Projects",
+];
+view("projects.view.php", $properties);
