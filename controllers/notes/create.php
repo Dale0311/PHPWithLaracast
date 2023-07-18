@@ -1,6 +1,9 @@
 <?php 
 session_start();
 
+use core\Database;
+use core\Validator;
+
 $config = require basePath("config.php");
 $heading = "Create Note";
 $db = new Database($config['database']);

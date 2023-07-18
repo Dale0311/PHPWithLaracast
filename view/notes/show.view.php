@@ -11,6 +11,9 @@
                     <h1 class="font-semibold text-sm">Created By: user_<?= $arrRow['user_id'] ?></h1>
                     <div class="">
                         <a href="../notes" class="text-blue-500 hover:underline">Go back to notes</a>
+                        <form method="post">
+                            <input type="hidden" name="">
+                        </form>
                     </div>
                 </div>
                 

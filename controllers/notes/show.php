@@ -1,5 +1,6 @@
 <?php 
 session_start();
+use core\Database;
 $config = require basePath("config.php"); 
 
 // if $_GET['id'] is set then gonna create variable of Id, if not dont create.

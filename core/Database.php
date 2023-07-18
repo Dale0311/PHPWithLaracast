@@ -1,4 +1,8 @@
 <?php 
+    // name space
+    namespace core;
+    // using name space
+    use PDO;
     class Database{
         // config
         private $dsn;

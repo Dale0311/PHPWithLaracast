@@ -24,3 +24,6 @@ RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
 
 ## and viola 
 ![image](https://github.com/Dale0311/PHPWithLaracast/assets/101126064/e3bff3ec-c3f1-42ab-921d-0b7ea96e061a)
+
+
+

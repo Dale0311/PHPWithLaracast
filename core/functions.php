@@ -1,4 +1,5 @@
 <?php 
+use core\Response;
     function navActive($val){
         return $_SERVER['REQUEST_URI'] === $val;
     }
@@ -29,6 +30,11 @@
     function view($path, $properties=[]){
         extract($properties);
         require basePath("view/".$path);
+    }
+    
+    function dateCreated(){
+        date_default_timezone_set("Asia/Manila");
+        return date("Y-M-d h:i:sa");
     }
 
 
