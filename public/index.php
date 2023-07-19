@@ -6,9 +6,13 @@ spl_autoload_register(function($class){
     require basePath("{$class}.php");
 }); 
 
+require basePath("foo.php");
+
 $router = new \core\Router(); // same as use \core\Router
 $routes = require basePath("routes.php") ;
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-$method = $_SERVER['REQUEST_METHOD'];
+// check if $_POST with a name _method exist. 
+$method = $_POST["_method"]?? $_SERVER['REQUEST_METHOD'];
+
 $router->route($uri, $method);

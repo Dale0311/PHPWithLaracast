@@ -4,7 +4,7 @@
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 mt-6 bg-white rounded">
         <div class="w-1/2 mx-auto">
-            <form class="space-y-2 flex flex-col" method="post">
+            <form class="space-y-2 flex flex-col" method="post" action="/notes">
                 <div>
                     <label for="Username" class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 font-semibold">
                         <input type="text" id="Username" name="title" class="peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 p-4" placeholder="Title" value="<?= $_POST['title']?? '' ?>"/>

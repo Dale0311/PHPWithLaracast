@@ -10,7 +10,11 @@ use core\Response;
         echo "<pre>";
         die();
     }
-
+    function abort($code = 404){
+        http_response_code($code);
+        require basePath("view/$code.php");
+        die();
+    }
     function hasRecord($arr){
         if (! $arr){
             abort(Response::$NOTFOUND);
@@ -34,7 +38,7 @@ use core\Response;
     
     function dateCreated(){
         date_default_timezone_set("Asia/Manila");
-        return date("Y-M-d h:i:sa");
+        return date("M d, Y h:i:sa");
     }
 
 

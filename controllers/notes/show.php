@@ -2,11 +2,11 @@
 session_start();
 use core\Database;
 $config = require basePath("config.php"); 
+$pdo = new Database($config['database']);
 
 // if $_GET['id'] is set then gonna create variable of Id, if not dont create.
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $pdo = new Database($config['database']);
     $query = "SELECT * FROM post WHERE id=?";
     $pdo->get($query, [$id]);
     $arrRow = $pdo->fetchRow();

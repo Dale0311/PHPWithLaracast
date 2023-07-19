@@ -24,9 +24,9 @@ class Router{
         $this->default($uri, $controller, "PUT");
     }
 
-    function route($uri){
+    function route($uri, $method){
         foreach ($this->routes as $route) {
-            if($route['uri'] === $uri){
+            if($route['uri'] === $uri && strtoupper($route['method']) === $method){
                 return require basePath($route['controller']);
             }
         }
@@ -39,19 +39,3 @@ class Router{
         die();
     }
 }
-// // name space
-// use core\Response;
-
-
-
-// // check if the uri exist, if so then require it
-// function routeToController($uri, $routes){
-//     if(array_key_exists($uri, $routes)) {
-//         require $routes[$uri];
-//     }
-//     else{
-//         abort(Response::$NOTFOUND);
-//     }
-// }
-
-?>
