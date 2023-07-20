@@ -20,6 +20,7 @@
             $this->pdo = new PDO($this->dsn, $this->username, $this->password);
             $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         }
+
         function get($query, $foo = []){
             $this->stmt = $this->pdo->prepare($query);
             $this->stmt->execute($foo);
@@ -28,6 +29,9 @@
             return $this;
         }
 
+        function getLastInsertedID(){
+            return $this->pdo->lastInsertId();
+        }
         function fetchRows(){
             $arrPost=[];
             if($this->stmt->rowCount() > 0){

@@ -26,12 +26,9 @@
                     <?php endif ?>
                 </div>
                 <div class="self-end">
-                    <button type="submit" name="submitForm" class="inline-flex items-center gap-2 rounded border border-indigo-600 bg-indigo-600 px-8 py-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500">
-                        <span class="text-sm font-medium"> Create </span>
-
-                        <svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                    <button type="submit" class="inline-flex items-center gap-2 rounded border border-blue-600 bg-blue-600 px-8 py-3 text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
+                        Create 
+                        <i class="fa-regular fa-plus"></i>
                     </button>
                 </div>
             </form>
