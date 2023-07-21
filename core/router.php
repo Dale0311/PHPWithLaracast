@@ -1,5 +1,8 @@
 <?php
 namespace core;
+
+use core\middleware\Middleware;
+
 class Router{
     public $routes = [];
     
@@ -8,25 +11,40 @@ class Router{
             "uri" => $uri,
             "controller" => $controller,
             "method" => $method,
+            "middleware" => null
         ];
+        return $this;
     }
 
     function get($uri, $controller){
-        $this->default($uri, $controller, "GET");
+        return $this->default($uri, $controller, "GET");
     }
     function post($uri, $controller){
-        $this->default($uri, $controller, "POST");
+        return $this->default($uri, $controller, "POST");
     }
     function delete($uri, $controller){
-        $this->default($uri, $controller, "DELETE");
+        return $this->default($uri, $controller, "DELETE");
     }
     function put($uri, $controller){
-        $this->default($uri, $controller, "PUT");
+        return $this->default($uri, $controller, "PUT");
     }
 
+    function only($key){
+        // get the index of the last append route and change the middleware to the given argument;
+        $this->routes[array_key_last($this->routes)] ['middleware'] = $key;
+        return $this;
+    }
+
+    function checkRoutes(){
+        return $this->routes;
+    }
     function route($uri, $method){
         foreach ($this->routes as $route) {
             if($route['uri'] === $uri && strtoupper($route['method']) === $method){
+                // create logic to handle that specific middleware
+                
+                // instantiate a Middleware class to access resolve method();
+                (new Middleware)->resolve($route['middleware']);
                 return require basePath($route['controller']);
             }
         }

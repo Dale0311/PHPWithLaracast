@@ -1,5 +1,4 @@
 <?php 
-session_start();
 use core\Database;
 $config = require basePath("config.php"); 
 $pdo = new Database($config['database']);

@@ -3,7 +3,7 @@
 // i just keep appending this using get.
 $router->get("/", "controllers/index.php");
 $router->get("/about", "controllers/about.php");
-$router->get("/notes", "controllers/notes/index.php");
+$router->get("/notes", "controllers/notes/index.php")->only("auth");
 $router->post("/notes", "controllers/notes/store.php");
 $router->delete("/notes", "controllers/notes/destroy.php");
 $router->put("/notes", "controllers/notes/put.php");
@@ -13,3 +13,10 @@ $router->get("/projects", "controllers/projects.php");
 
 $router->get("/register", "controllers/registration/index.php");
 $router->post("/register", "controllers/registration/store.php");
+
+
+$router->get("/login", "controllers/login/index.php")->only("guest");
+$router->post("/login", "controllers/login/post.php");
+
+$router->get("/logout", "controllers/logout/index.php");
+

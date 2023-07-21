@@ -1,12 +1,10 @@
 <?php 
-session_start(); 
-
+// redirect to register new account or login if the user is not currently logged in.
 use core\Database;
-$config = require basePath("config.php");
-
-$pdo = new Database($config['database']);
+use core\App;
+$pdo = App::resolver(Database::class);
 $query = " SELECT * FROM post WHERE user_id=?";
-$pdo->get($query,[$_SESSION["curr_user_id"]]);
+$pdo->get($query,[$_SESSION["curr_user"]['id']]);
 $arrPost = $pdo->fetchRows();
 
 $properties = [

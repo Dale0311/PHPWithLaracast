@@ -1,14 +1,12 @@
 <!-- i know for a fact that the request method is put -->
 <?php 
-session_start();
 use core\Database;
 use core\Validator;
-
-$config = require basePath("config.php");
+use core\App;
+$db = App::resolver(Database::class);
 $heading = "My Note";
-$db = new Database($config['database']);
 // validation
-if($_SESSION['curr_user_id'] !== (int)$_POST['user_id']){
+if($_SESSION['curr_user']['id'] !== (int)$_POST['user_id']){
     abort(403);
 }
 
