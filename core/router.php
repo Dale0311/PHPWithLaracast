@@ -45,7 +45,7 @@ class Router{
                 
                 // instantiate a Middleware class to access resolve method();
                 (new Middleware)->resolve($route['middleware']);
-                return require basePath($route['controller']);
+                return require basePath('http/controllers/'.$route['controller']);
             }
         }
         $this->abort();

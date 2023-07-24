@@ -24,7 +24,7 @@
                     <?php endif ?>
                 </div>
                 <div>
-                    <textarea name="body" id="" rows="10" class="w-full border rounded text-lg p-4 resize-none overscroll-contain focus:outline-blue-500" placeholder="Here's a new idea..."><?= $arrRow['body'] ?></textarea>
+                    <textarea name="body" id="" rows="10" class="w-full border rounded text-lg p-4 resize-none overscroll-contain" placeholder="Here's a new idea..."><?= $arrRow['body'] ?></textarea>
                     <?php if(isset($error['body'])) :?>
                         <p class="text-red-500 text-sm"><?= $error['body'] ?></p>
                     <?php endif ?>

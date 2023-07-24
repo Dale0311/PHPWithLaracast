@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
     hasRecord($arrRow);
     
     // if condition not true
-    authorize($arrRow['user_id'] === $_SESSION['curr_user_id']);
+    authorize($arrRow['user_id'] === $_SESSION['curr_user']['id']);
     
     $properties = [
         "Heading" => "My note:",

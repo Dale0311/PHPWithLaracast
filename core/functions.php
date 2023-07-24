@@ -41,5 +41,8 @@ use core\Response;
         return date("M d, Y h:i:sa");
     }
 
-
+    function redirect($uri){
+        header("location: {$uri}");
+        die();
+    }
     

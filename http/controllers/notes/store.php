@@ -16,8 +16,7 @@ $body = htmlspecialchars($_POST['body']);
 
 // restriction
 $titleMax = 100;
-$bodyMax = 500;
-
+$bodyMax = 1000;
 // validation
 // if not true
 
@@ -39,5 +38,5 @@ if(! empty($error)){
 $q = "INSERT INTO post (`title`, `body`, `user_id`) VALUES (?, ?, ?)";
 
 // prepared statement
-$db->get($q, [$title, $body, $_SESSION['curr_user_id']]); 
+$db->get($q, [$title, $body, $_SESSION['curr_user']['id']]); 
 header("location: ../notes");
