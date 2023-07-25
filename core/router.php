@@ -2,6 +2,7 @@
 namespace core;
 
 use core\middleware\Middleware;
+use PDO;
 
 class Router{
     public $routes = [];
@@ -55,5 +56,9 @@ class Router{
         http_response_code($code);
         require basePath("view/$code.php");
         die();
+    }
+
+    function previousUrl(){
+        return $_SERVER['HTTP_REFERER'];
     }
 }
